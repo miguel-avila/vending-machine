@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>README.html</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+
+</head>
+
+<body>
+
+<h2 id="module1capstone-vendingmachinesoftware">Module 1 Capstone - Vending Machine Software</h2>
+
+<p>You&#8217;ve been asked to develop an application for the newest vending machine distributor,
+Umbrella Corp. They&#8217;ve released a new vending machine, Vendo-Matic 800, that is integrated
+with everyone&#8217;s bank accounts, allowing customers to purchase products from their computers for their convenience.</p>
+
+<h3 id="applicationrequirements">Application Requirements</h3>
+
+<ol>
+<li>The vending machine dispenses beverages, candy, chips, and gum.</li>
+</ol>
+
+<ul>
+<li> Each vending machine item has a Name and a Price.</li>
+</ul>
+
+<ol>
+<li>A main menu must display when the software runs, presenting the following options:
+
+<blockquote>
+<pre><code>(1) Display Vending Machine Items
+(2) Purchase
+(3) Exit
+</code></pre>
+</blockquote></li>
+<li>The vending machine inventory is stocked via an input file when the vending machine
+starts.</li>
+<li>The vending machine is automatically restocked each time the application runs.</li>
+<li>When the customer selects &#8220;(1) Display Vending Machine Items&#8221;, they&#8217;re presented
+with a list of all items in the vending machine with its quantity remaining:
+
+<ul>
+<li>Each vending machine product has a slot identifier and a purchase price.</li>
+<li>Each slot in the vending machine has enough room for 5 of that product.</li>
+<li>Every product is initially stocked to the maximum amount.</li>
+<li>A product that has run out must indicate that it is SOLD OUT.</li>
+</ul></li>
+<li>When the customer selects &#8220;(2) Purchase&#8221;, they are guided through the purchasing
+process menu:
+
+<blockquote>
+<pre><code>(1) Feed Money
+(2) Select Product
+(3) Finish Transaction
+
+Current Money Provided: $2.00
+</code></pre>
+</blockquote></li>
+<li>The purchase process flow is as follows:
+
+<ol>
+<li>Selecting &#8220;(1) Feed Money&#8221; allows the customer to repeatedly feed money into the
+machine in valid, whole dollar amounts (e.g. $1, $2, $5, or $10).
+
+<ul>
+<li>The &#8220;Current Money Provided&#8221; indicates how much money the customer
+has fed into the machine.</li>
+</ul></li>
+<li>Selecting &#8220;(2) Select Product&#8221; allows the customer to select a product to
+purchase.
+
+<ul>
+<li>Show the list of products available and allow the customer to enter
+a code to select an item.</li>
+<li>If the product code does not exist, the customer is informed and returned
+to the Purchase menu.</li>
+<li>If a product is sold out, the customer is informed and returned to the
+Purchase menu.</li>
+<li>If a valid product is selected, it is dispensed to the customer.</li>
+<li>Dispensing an item prints the item name, cost, and the money
+remaining. Dispensing also returns a message:</li>
+<li> All chip items print &#8220;Crunch Crunch, Yum!&#8221;</li>
+<li> All candy items print &#8220;Munch Munch, Yum!&#8221;</li>
+<li> All drink items print &#8220;Glug Glug, Yum!&#8221;</li>
+<li> All gum items print &#8220;Chew Chew, Yum!&#8221;</li>
+<li>After the product is dispensed, the machine must update its balance
+accordingly and return the customer to the Purchase menu.</li>
+</ul></li>
+<li>Selecting &#8220;(3) Finish Transaction&#8221; allows the customer to complete the
+transaction and receive any remaining change.
+
+<ul>
+<li>The customer&#8217;s money is returned using nickels, dimes, and quarters
+(using the smallest amount of coins possible).</li>
+<li>The machine&#8217;s current balance must be updated to $0 remaining.</li>
+</ul></li>
+<li>After completing their purchase, the user is returned to the &#8220;Main&#8221; menu to
+continue using the vending machine.</li>
+</ol></li>
+<li>All purchases must be audited to prevent theft from the vending machine:</li>
+</ol>
+
+<ul>
+<li> Each purchase must generate a line in a file called <code>Log.txt</code>.</li>
+<li> The audit entry must be in the format:
+&gt;<code>&gt; 01/01/2016 12:00:00 PM FEED MONEY: $5.00 $5.00
+ &gt;01/01/2016 12:00:15 PM FEED MONEY: $5.00 $10.00
+ &gt;01/01/2016 12:00:20 PM Crunchie B4 $10.00 $8.50
+ &gt;01/01/2016 12:01:25 PM Cowtales B2 $8.50 $7.50
+ &gt;01/01/2016 12:01:35 PM GIVE CHANGE: $7.50 $0.00
+ &gt;</code></li>
+</ul>
+
+<ol>
+<li>Create as many of your classes as possible to be &#8220;testable&#8221; classes. Limit console
+input and output to as few classes as possible.</li>
+<li>Optional - Sales Report
+
+<ul>
+<li>Provide a &#8220;Hidden&#8221; menu option on the main menu (&#8220;4&#8221;) that writes to a sales
+report that shows the total sales since the machine was started. The name of the
+file must include the date and time so each sales report is uniquely named.</li>
+<li>An example of the output format is provided below.</li>
+</ul></li>
+<li>Provide unit tests demonstrating that your code works correctly.</li>
+</ol>
+
+<hr />
+
+<h3 id="vendingmachinedatafile">Vending Machine Data File</h3>
+
+<p>The input file that stocks the vending machine products is a pipe <code>|</code> delimited file. Each line is a separate product in the file and follows the below format:</p>
+
+<table>
+<colgroup>
+<col />
+<col />
+</colgroup>
+
+<thead>
+<tr>
+	<th> Column Name </th>
+	<th> Description </th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td> Slot Location </td>
+	<td> The slot location in the vending machine where the product is set. </td>
+</tr>
+<tr>
+	<td> Product Name </td>
+	<td> The display name of the vending machine product.     </td>
+</tr>
+<tr>
+	<td> Price   </td>
+	<td> The purchase price for the product.        </td>
+</tr>
+<tr>
+	<td> Type   </td>
+	<td> The product type for this row.          </td>
+</tr>
+</tbody>
+</table>
+
+<p>For example:</p>
+
+<pre><code>A1|Potato Crisps|3.05|Chip
+B1|Moonpie|1.80|Candy
+B2|Cowtales|1.50|Candy
+C1|Cola|1.25|Drink
+</code></pre>
+
+<p>An input file has been provided with your repository: <code>vendingmachine.csv</code>.</p>
+
+<hr />
+
+<h3 id="salesreport">Sales Report</h3>
+
+<p>The output sales report file is also pipe-delimited for consistency. Each line is a separate product with the number of sales for the applicable product. At the end of the report is a blank line followed by the <strong>TOTAL SALES</strong> dollar amount indicating the gross sales from the vending machine.</p>
+
+<p><strong>Example Output</strong></p>
+
+<blockquote>
+<pre><code>Potato Crisps|10
+Stackers|3
+Grain Waves|0
+Cloud Popcorn|50
+Moonpie|23
+Cowtales|2
+Wonka Bar|1
+Crunchie|3
+Skor|4
+Cola|8
+Dr. Salt|9
+Mountain Melter|12
+Heavy|11
+Diet Cola|6
+U-Chews|4
+Little League Chew|2
+Chiclets|0
+Triplemint|0
+</code></pre>
+</blockquote>
+
+</body>
+</html>
