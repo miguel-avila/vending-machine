@@ -1,5 +1,5 @@
 package com.techelevator;
 
-public class Chips {
+public class Chips extends InventoryItems {
 
 }

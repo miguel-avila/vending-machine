@@ -10,11 +10,13 @@ public class Menu {
 	private PrintWriter out;
 	private Scanner in;
 
+	//
 	public Menu(InputStream input, OutputStream output) {
 		this.out = new PrintWriter(output);
 		this.in = new Scanner(input);
 	}
 
+	
 	public Object getChoiceFromOptions(Object[] options) {
 		Object choice = null;
 		while (choice == null) {
@@ -41,6 +43,8 @@ public class Menu {
 		return choice;
 	}
 
+	//46-53 takes an array of objects and output items (back to back) 
+	//
 	private void displayMenuOptions(Object[] options) {
 		out.println();
 		for (int i = 0; i < options.length; i++) {
