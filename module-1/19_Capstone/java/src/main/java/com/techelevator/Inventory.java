@@ -1,5 +1,6 @@
 package com.techelevator;
 
+import java.io.File;
 import java.util.Map;
 
 public class Inventory {
@@ -9,8 +10,15 @@ public class Inventory {
 private Map<String , Item> inventory;
 	
 //use CSV to load the items 
-public void loadInventory() {
+//
+public void loadInventory(File file) {
+	StockCSVLoader stockCSVLoader = new StockCSVLoader(file);
+	inventory = stockCSVLoader.loadVendingMachine();
 	
+}
+
+public Map<String , Item> getInventory() {
+	return inventory;
 }
 	
 	

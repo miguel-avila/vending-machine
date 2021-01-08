@@ -83,6 +83,8 @@ public class StockCSVLoader {
 			// read the file
 			try(Scanner fileScanner = new Scanner(this.inputFile)){
 				// for each item in the file
+				
+				//ASK ANDREW OR JOE Meaning of LineNumber++
 				int lineNumber = 1;
 				while(fileScanner.hasNextLine()) {
 					// get the line from the scanner

@@ -18,6 +18,11 @@ public class Item {
 		this.slotId = slotId;
 	}
 
+	
+	//load up inventory 
+	
+	
+	
 //getters and setters
 	public String getName() {
 		return name;
@@ -51,4 +56,5 @@ public class Item {
 		this.itemType = itemType;
 	}
 
+	
 }
