@@ -40,30 +40,36 @@ public class StockCSVLoader {
 			
 			if(itemType.toLowerCase().equals("Candy")) {
 				Candy candy = new Candy();
-				candy.setSlotId (slotId);
+				candy.setSlotId(slotId);
 				candy.setName(name);
 				candy.setPrice(new BigDecimal(price));
-				return candy;
+				candy.setItemType(itemType);
+				
+				return candy;                                     
 				
 			} else if(itemType.toLowerCase().equals("Chips")) {
 				Chips chips = new Chips();
-				chips.setSlotId (slotId);
+				chips.setSlotId(slotId);
 				chips.setName(name);
 				chips.setPrice(new BigDecimal(price));
+				chips.setItemType(itemType);
+				
 				return chips;
 				
 			} else if (itemType.toLowerCase().equals("Beverages")){
 				Beverages beverages = new Beverages();
-				beverages.setSlotId (slotId);
+				beverages.setSlotId(slotId);
 				beverages.setName(name);
 				beverages.setPrice(new BigDecimal(price));
+				beverages.setItemType(itemType);
 				return beverages;
 				
 			} else if (itemType.toLowerCase().equals("Gum")){
 				Gum gum = new Gum();
-				gum.setSlotId (slotId);
+				gum.setSlotId(slotId);
 				gum.setName(name);
 				gum.setPrice(new BigDecimal(price));
+				gum.setItemType(itemType);
 				return gum;
 				
 			} else {
