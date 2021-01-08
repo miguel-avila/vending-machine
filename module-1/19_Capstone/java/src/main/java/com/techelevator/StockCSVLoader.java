@@ -38,7 +38,7 @@ public class StockCSVLoader {
 			String itemType = components[3].trim();
 			
 			
-			if(itemType.toLowerCase().equals("Candy")) {
+			if(itemType.equalsIgnoreCase("Candy")) {
 				Candy candy = new Candy();
 				candy.setSlotId(slotId);
 				candy.setName(name);
@@ -47,7 +47,7 @@ public class StockCSVLoader {
 				
 				return candy;                                     
 				
-			} else if(itemType.toLowerCase().equals("Chips")) {
+			} else if(itemType.equalsIgnoreCase("Chips")) {
 				Chips chips = new Chips();
 				chips.setSlotId(slotId);
 				chips.setName(name);
@@ -56,7 +56,7 @@ public class StockCSVLoader {
 				
 				return chips;
 				
-			} else if (itemType.toLowerCase().equals("Beverages")){
+			} else if (itemType.equalsIgnoreCase("Drink")){
 				Beverages beverages = new Beverages();
 				beverages.setSlotId(slotId);
 				beverages.setName(name);
@@ -64,7 +64,7 @@ public class StockCSVLoader {
 				beverages.setItemType(itemType);
 				return beverages;
 				
-			} else if (itemType.toLowerCase().equals("Gum")){
+			} else if (itemType.equalsIgnoreCase("Gum")){
 				Gum gum = new Gum();
 				gum.setSlotId(slotId);
 				gum.setName(name);
@@ -85,7 +85,6 @@ public class StockCSVLoader {
 				// for each item in the file
 				
 				//ASK ANDREW OR JOE Meaning of LineNumber++
-				int lineNumber = 1;
 				while(fileScanner.hasNextLine()) {
 					// get the line from the scanner
 					String line = fileScanner.nextLine();
@@ -95,7 +94,6 @@ public class StockCSVLoader {
 						vendingMachine.put(p.getSlotId(), p);
 					}
 					
-					lineNumber++;
 				}	
 			} catch (FileNotFoundException fnf) {
 				return null;

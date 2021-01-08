@@ -1,6 +1,7 @@
 package com.techelevator;
 
 import java.io.File;
+import java.nio.file.Paths;
 
 import com.techelevator.view.InventoryDisplay;
 import com.techelevator.view.Menu;
@@ -11,9 +12,9 @@ public class VendingMachineCLI {
 	private static final String MAIN_MENU_OPTION_PURCHASE = "Purchase";
 	private static final String MAIN_MENU_OPTION_EXIT = "Exit";
 	private static final String[] MAIN_MENU_OPTIONS = { MAIN_MENU_OPTION_DISPLAY_ITEMS, MAIN_MENU_OPTION_PURCHASE, MAIN_MENU_OPTION_EXIT };
-	private static final String CSV_FILE_PATH ="C:\\Users\\Student\\workspace\\capstone-1-team-1\\module-1\\19_Capstone\\java\\vendingmachine.csv";
+	private static final String CSV_FILE_PATH ="vendingmachine.csv";
 	private Menu menu;
-	private InventoryDisplay inventoryDisplay;
+	private InventoryDisplay inventoryDisplay = new InventoryDisplay();
 	
 	public VendingMachineCLI(Menu menu) {
 		this.menu = menu;
