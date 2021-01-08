@@ -1,6 +1,6 @@
 package com.techelevator;
 
-public class InventoryOnly {
+public class Inventory {
 
 	//will be used for transaction and update inventory
 	//Potentailly map 
